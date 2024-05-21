@@ -1,0 +1,27 @@
+path: ../datasets/roboflow
+
+train: train/images
+val: valid/images
+test: test/images
+
+names: 
+  0: -02-01-24 B 004
+  1: -02.01.24 B 004
+  2: -11-03-24 A 004
+  3: -26-06-23 A 005
+  4: -MRP NPR 325-
+  5: -MRP NPR 75-
+  6: -MRP Rs. 250-
+  7: -MRP Rs. 685-
+  8: -NET VOL.200ML
+  9: -NET VOL.325ML
+  10: -NET VOL.625ML
+  11: 05-02-24 B 055
+  12: BB-26-02-025
+  13: BN-18-55-10
+  14: BN-58-48-10 L1
+  15: MFD- 18-02-024
+  16: MFD-18-02-024
+  17: MFD-26-02-024
+  18: MRP RS 175 17-37
+  19: MRP RS 335 12-
