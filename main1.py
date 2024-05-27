@@ -48,12 +48,12 @@ def clip_and_resize_image(image, points):
         print(f"Invalid bounding box: x_min={x_min}, x_max={x_max}, y_min={y_min}, y_max={y_max}")
         return None
 
-# Paths to your folders and YAML file
+
 input_folder = "Text Detection.v2i.yolov8-obb/test"
 output_folder = "Text Detection.v2i.yolov8-obb/clip1"
 yaml_file_path = "Text Detection.v2i.yolov8-obb/data.yaml"
 
-# Load the YAML labels
+
 labels_dict = load_yaml_labels(yaml_file_path)
 
 
@@ -79,9 +79,8 @@ for filename in os.listdir(input_folder):
             clipped_image = clip_and_resize_image(image, points)
             
             if clipped_image is not None and clipped_image.size > 0:
-                # cv2.imwrite(output_path, clipped_image)
+                cv2.imwrite(output_path, clipped_image)
                 print(f"Image {i} clipped and saved as {output_path}")
-                # Map label_id to label name using the YAML labels dictionary
                 label_name = labels_dict.get(int(label_id), "unknown")
                 
                 label_filename = f"{os.path.splitext(image_filename)[0]}_{i}.txt"
