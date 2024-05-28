@@ -1,0 +1,6 @@
+clip1/
+clip/
+test/
+*.txt
+*.jpg
+train/*

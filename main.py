@@ -1,7 +1,7 @@
 import os
 import cv2
 import numpy as np
-from pathlib import Path
+
 
 def extract_points_from_string(line, shape):
     values = line.strip().split(' ')
@@ -26,21 +26,21 @@ def clip_and_resize_image(image, points):
     cv2.fillPoly(mask, points, (255, 255, 255))
     clipped_image = cv2.bitwise_and(image, mask)
     
-    # Calculate the bounding box from the points
+    
     x_coords = [p[0] for p in points[0]]
     y_coords = [p[1] for p in points[0]]
     x_min, x_max = int(min(x_coords)), int(max(x_coords))
     y_min, y_max = int(min(y_coords)), int(max(y_coords))
     
-    # Ensure bounding box is within image dimensions
+   
     x_min = max(0, x_min)
     y_min = max(0, y_min)
     x_max = min(image.shape[1], x_max)
     y_max = min(image.shape[0], y_max)
 
-    # Check for valid bounding box dimensions
+    
     if x_max > x_min and y_max > y_min:
-        # Crop the image to the bounding box
+        
         cropped_image = clipped_image[y_min:y_max, x_min:x_max]
         return cropped_image
     else:
